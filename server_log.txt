@@ -525,3 +525,278 @@ Console input: help
 [14:34:51] ID	Name	Ping	IP
 [14:34:51] 0	Edward_Lugo	18	127.0.0.1
 [14:34:58] [part] Edward_Lugo has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[16:23:12] filterscripts = ""  (string)
+[16:23:12] 
+[16:23:12] Server Plugins
+[16:23:12] --------------
+[16:23:12]  Loaded 0 plugins.
+
+[16:23:12] 
+[16:23:12] Filterscripts
+[16:23:12] ---------------
+[16:23:12]   Loaded 0 filterscripts.
+
+[16:23:12]  
+[16:23:12]  
+[16:23:12]  
+[16:23:12]  ======================================= 
+[16:23:12]  |                                     | 
+[16:23:12]  |        YSI version 3.09.0684        | 
+[16:23:12]  |        By Alex "Y_Less" Cole        | 
+[16:23:12]  |                                     | 
+[16:23:12]  ======================================= 
+[16:23:12]  
+[16:23:12]  
+[16:23:12]  
+[16:23:12] 
+---------------------------------------
+[16:23:12] Iniciando Living Online Roleplay
+
+[16:23:12] ---------------------------------------
+
+[16:23:12] Number of vehicle models: 0
+[16:24:27] [connection] 127.0.0.1:52456 requests connection cookie.
+[16:24:28] [connection] incoming connection: 127.0.0.1:52456 id: 0
+[16:24:29] [join] STM has joined the server (0:127.0.0.1)
+[16:24:29] [part] STM has left the server (0:2)
+[16:24:53] [connection] 127.0.0.1:52462 requests connection cookie.
+[16:24:54] [connection] incoming connection: 127.0.0.1:52462 id: 0
+[16:24:55] [join] STM has joined the server (0:127.0.0.1)
+[16:24:55] [part] STM has left the server (0:2)
+[16:25:10] [connection] incoming connection: 127.0.0.1:52463 id: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[16:25:25] filterscripts = ""  (string)
+[16:25:25] 
+[16:25:25] Server Plugins
+[16:25:25] --------------
+[16:25:25]  Loaded 0 plugins.
+
+[16:25:25] 
+[16:25:25] Filterscripts
+[16:25:25] ---------------
+[16:25:25]   Loaded 0 filterscripts.
+
+[16:25:25]  
+[16:25:25]  
+[16:25:25]  
+[16:25:25]  ======================================= 
+[16:25:25]  |                                     | 
+[16:25:25]  |        YSI version 3.09.0684        | 
+[16:25:25]  |        By Alex "Y_Less" Cole        | 
+[16:25:25]  |                                     | 
+[16:25:25]  ======================================= 
+[16:25:25]  
+[16:25:25]  
+[16:25:25]  
+[16:25:25] 
+---------------------------------------
+[16:25:25] Iniciando Living Online Roleplay
+
+[16:25:25] ---------------------------------------
+
+[16:25:25] Number of vehicle models: 0
+[16:25:41] [connection] 127.0.0.1:55291 requests connection cookie.
+[16:25:42] [connection] incoming connection: 127.0.0.1:55291 id: 0
+[16:25:43] [join] STM has joined the server (0:127.0.0.1)
+[16:25:43] [part] STM has left the server (0:2)
+[16:26:07] [connection] 127.0.0.1:55296 requests connection cookie.
+[16:26:08] [connection] incoming connection: 127.0.0.1:55296 id: 0
+[16:26:08] [join] Edward_Lugo has joined the server (0:127.0.0.1)
+[16:26:11] [part] Edward_Lugo has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[16:26:50] filterscripts = ""  (string)
+[16:26:50] 
+[16:26:50] Server Plugins
+[16:26:50] --------------
+[16:26:50]  Loaded 0 plugins.
+
+[16:26:50] 
+[16:26:50] Filterscripts
+[16:26:50] ---------------
+[16:26:50]   Loaded 0 filterscripts.
+
+[16:26:50]  
+[16:26:50]  
+[16:26:50]  
+[16:26:50]  ======================================= 
+[16:26:50]  |                                     | 
+[16:26:50]  |        YSI version 3.09.0684        | 
+[16:26:50]  |        By Alex "Y_Less" Cole        | 
+[16:26:50]  |                                     | 
+[16:26:50]  ======================================= 
+[16:26:50]  
+[16:26:50]  
+[16:26:50]  
+[16:26:50] 
+---------------------------------------
+[16:26:50] Iniciando Living Online Roleplay
+
+[16:26:50] ---------------------------------------
+
+[16:26:50] Number of vehicle models: 0
+[16:27:06] [connection] 127.0.0.1:65086 requests connection cookie.
+[16:27:07] [connection] incoming connection: 127.0.0.1:65086 id: 0
+[16:27:07] [join] STM has joined the server (0:127.0.0.1)
+[16:27:09] [part] STM has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[16:27:41] filterscripts = ""  (string)
+[16:27:41] 
+[16:27:41] Server Plugins
+[16:27:41] --------------
+[16:27:41]  Loaded 0 plugins.
+
+[16:27:41] 
+[16:27:41] Filterscripts
+[16:27:41] ---------------
+[16:27:41]   Loaded 0 filterscripts.
+
+[16:27:41]  
+[16:27:41]  
+[16:27:41]  
+[16:27:41]  ======================================= 
+[16:27:41]  |                                     | 
+[16:27:41]  |        YSI version 3.09.0684        | 
+[16:27:41]  |        By Alex "Y_Less" Cole        | 
+[16:27:41]  |                                     | 
+[16:27:41]  ======================================= 
+[16:27:41]  
+[16:27:41]  
+[16:27:41]  
+[16:27:41] 
+---------------------------------------
+[16:27:41] Iniciando Living Online Roleplay
+
+[16:27:41] ---------------------------------------
+
+[16:27:41] Number of vehicle models: 0
+[16:28:06] [connection] 127.0.0.1:64799 requests connection cookie.
+[16:28:07] [connection] incoming connection: 127.0.0.1:64799 id: 0
+[16:28:07] [join] Damon_Salvatore has joined the server (0:127.0.0.1)
+[16:28:39] [part] Damon_Salvatore has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[17:16:29] filterscripts = ""  (string)
+[17:16:29] 
+[17:16:29] Server Plugins
+[17:16:29] --------------
+[17:16:29]  Loaded 0 plugins.
+
+[17:16:29] 
+[17:16:29] Filterscripts
+[17:16:29] ---------------
+[17:16:29]   Loaded 0 filterscripts.
+
+[17:16:30]  
+[17:16:30]  
+[17:16:30]  
+[17:16:30]  ======================================= 
+[17:16:30]  |                                     | 
+[17:16:30]  |        YSI version 3.09.0684        | 
+[17:16:30]  |        By Alex "Y_Less" Cole        | 
+[17:16:30]  |                                     | 
+[17:16:30]  ======================================= 
+[17:16:30]  
+[17:16:30]  
+[17:16:30]  
+[17:16:30] 
+---------------------------------------
+[17:16:30] Iniciando Living Online Roleplay
+
+[17:16:30] ---------------------------------------
+
+[17:16:30] Number of vehicle models: 0
+[17:16:48] [connection] 127.0.0.1:51887 requests connection cookie.
+[17:16:49] [connection] incoming connection: 127.0.0.1:51887 id: 0
+[17:16:49] [join] Damon_Salvatore has joined the server (0:127.0.0.1)
+[17:17:21] [part] Damon_Salvatore has left the server (0:1)
+[17:17:51] [connection] 127.0.0.1:60535 requests connection cookie.
+[17:17:52] [connection] incoming connection: 127.0.0.1:60535 id: 0
+[17:17:52] [join] Damon_Salvatore has joined the server (0:127.0.0.1)
+[17:18:08] [part] Damon_Salvatore has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[17:22:40] filterscripts = ""  (string)
+[17:22:40] 
+[17:22:40] Server Plugins
+[17:22:40] --------------
+[17:22:40]  Loaded 0 plugins.
+
+[17:22:40] 
+[17:22:40] Filterscripts
+[17:22:40] ---------------
+[17:22:40]   Loaded 0 filterscripts.
+
+[17:22:40]  
+[17:22:40]  
+[17:22:40]  
+[17:22:40]  ======================================= 
+[17:22:40]  |                                     | 
+[17:22:40]  |        YSI version 3.09.0684        | 
+[17:22:40]  |        By Alex "Y_Less" Cole        | 
+[17:22:40]  |                                     | 
+[17:22:40]  ======================================= 
+[17:22:40]  
+[17:22:40]  
+[17:22:40]  
+[17:22:40] 
+---------------------------------------
+[17:22:40] Iniciando Living Online Roleplay
+
+[17:22:40] ---------------------------------------
+
+[17:22:40] Number of vehicle models: 0
+[17:22:59] [connection] 127.0.0.1:62565 requests connection cookie.
+[17:23:00] [connection] incoming connection: 127.0.0.1:62565 id: 0
+[17:23:00] [join] Damon_Salvatore has joined the server (0:127.0.0.1)
+[17:23:34] [part] Damon_Salvatore has left the server (0:1)
+[17:23:57] [connection] 127.0.0.1:62571 requests connection cookie.
+[17:23:58] [connection] incoming connection: 127.0.0.1:62571 id: 0
+[17:23:58] [join] Damon_Salvatore has joined the server (0:127.0.0.1)
+[17:24:47] [part] Damon_Salvatore has left the server (0:1)

@@ -18,8 +18,10 @@
 //Sistema de registro
 #define 				RegisterDialog 				(1)
 #define 				LoginDialog 				(2)
-#define 				SuccessRegister 			(3)
-#define 				SuccessLogin 				(4)
+#define					RegisterSex					(3)
+#define					RegisterAge					(4)
+#define 				SuccessRegister 			(5)
+#define 				SuccessLogin 				(6)
 
 #define 				User_Path					"/Users/%s.ini"
 
@@ -27,6 +29,10 @@
 #define					COLOR_WHITE_T				"{FFFFFF}"
 #define					COLOR_RED_T					"{F81414}"
 #define					COLOR_GREEN_T				"{00FF22}"
+#define					COLOR_BLACK					0x000000FF
+#define					COLOR_WHITE					0xFFFFFFAA
+#define					COLOR_YELLOW				0xE6E915FF
+#define					COLOR_RED 					0xE60000FF
 
 //------------------Limites-----------------------------
 #define					MAX_PING					(1500)
@@ -40,6 +46,8 @@ enum PlayerData
 	Money,
 	Float:Health,
 	Float:Armour,
+	Sex,
+	Age,
 	VIP,
 	Admin,
 	Float:PosX,
@@ -59,6 +67,8 @@ public LoadUser_data(playerid, name[], value[])
 	INI_Int("Money", pInfo[playerid][Money]);
 	INI_Float("Health", pInfo[playerid][Health]);
 	INI_Float("Armour", pInfo[playerid][Armour]);
+	INI_Int("Sex", pInfo[playerid][Sex]);
+	INI_Int("Age", pInfo[playerid][Age]);
 	INI_Int("VIP", pInfo[playerid][VIP]);
 	INI_Int("Admin", pInfo[playerid][Admin]);
 	INI_Float("PosX", pInfo[playerid][PosX]);
@@ -109,7 +119,7 @@ public OnPlayerConnect(playerid)
 	}
 	else
 	{
-		ShowPlayerDialog(playerid, RegisterDialog, DIALOG_STYLE_INPUT, ""COLOR_WHITE_T"Registrarse", ""COLOR_WHITE_T"Escribe una contraseña para crear tu cuenta:", "Registrar", "Salir");
+		ShowPlayerDialog(playerid, RegisterDialog, DIALOG_STYLE_INPUT, ""COLOR_WHITE_T"Registrarse", ""COLOR_WHITE_T"Escribe una contraseña para crear tu cuenta:", "Siguiente", "Salir");
 	}
 
  	return 1;
@@ -130,6 +140,8 @@ public OnPlayerDisconnect(playerid, reason)
 	INI_WriteInt(File, "Money", pInfo[playerid][Money]);
 	INI_WriteFloat(File, "Health", pInfo[playerid][Health]);
 	INI_WriteFloat(File, "Armour", pInfo[playerid][Armour]);
+	INI_WriteInt(File, "Sex", pInfo[playerid][Sex]);
+	INI_WriteInt(File, "Age", pInfo[playerid][Age]);
 	INI_WriteInt(File, "VIP", pInfo[playerid][VIP]);
 	INI_WriteInt(File, "Admin", pInfo[playerid][Admin]);
 	INI_WriteFloat(File, "PosX", pInfo[playerid][PosX]);
@@ -184,7 +196,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			if(!response) return Kick(playerid);
 			if(response)
 			{
-            	if(!strlen(inputtext)) return ShowPlayerDialog(playerid, RegisterDialog, DIALOG_STYLE_INPUT, ""COLOR_WHITE_T"Registro",""COLOR_RED_T"Has ingresado una contraseña inválida.\n"COLOR_WHITE_T"Escribe una contraseña valida para registrarse:","Registrar","Salir");
+            	if(!strlen(inputtext)) return ShowPlayerDialog(playerid, RegisterDialog, DIALOG_STYLE_INPUT, ""COLOR_WHITE_T"Registro",""COLOR_RED_T"Has ingresado una contraseña inválida.\n"COLOR_WHITE_T"Escribe una contraseña valida para registrarse:","Siguiente","Salir");
 				new INI:File = INI_Open(UserPath(playerid));
 				INI_SetTag(File, "data");
 				INI_WriteInt(File, "Password", udb_hash(inputtext));
@@ -201,13 +213,9 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				INI_WriteInt(File, "Interior", 0);
 				INI_Close(File);
 
-				SetSpawnInfo(playerid, 277, 277, -2016.4399, -79.7714, 35.3203, 0, 0, 0, 0, 0, 0, 0);
-				SetPlayerVirtualWorld(playerid, 0);
-				SetPlayerInterior(playerid, 0);
-				SetPlayerSkin(playerid, 277);
-				GivePlayerMoney(playerid, 15000);
-				SpawnPlayer(playerid);
-				ShowPlayerDialog(playerid, SuccessRegister, DIALOG_STYLE_MSGBOX, ""COLOR_WHITE_T"¡Listo!",""COLOR_GREEN_T"Se ha guardado tu cuenta en nuestra base de datos, ¡Disfruta!", "Entendido", "");
+				ShowPlayerDialog(playerid, RegisterAge, DIALOG_STYLE_INPUT, ""COLOR_WHITE_T"Edad",""COLOR_WHITE_T"Ahora necesitamos que nos digas tu edad:", "Siguiente", "Cancelar");
+
+				return 1;
 			}
 		}
 		case LoginDialog:
@@ -232,6 +240,46 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					ShowPlayerDialog(playerid, LoginDialog, DIALOG_STYLE_INPUT, ""COLOR_WHITE_T"Ingreso", ""COLOR_RED_T"Colocaste una contraseña incorrecta.\nEscribe tu contraseña para ingresar:", "Ingresar", "Salir");
 				}
 				return 1;
+			}
+		}
+		case RegisterAge:
+		{
+			if(!response) return Kick(playerid);
+			if(response)
+			{
+				if(strval(inputtext) < 15 || strval(inputtext) > 99) return ShowPlayerDialog(playerid, RegisterAge, DIALOG_STYLE_INPUT, ""COLOR_WHITE_T"Edad",""COLOR_RED_T"Ingresaste una edad no permitida, debe ser mayor que 15 y menor de 99:", "Siguiente", "Cancelar");
+
+				pInfo[playerid][Age] = strval(inputtext);
+				ShowPlayerDialog(playerid, RegisterSex, DIALOG_STYLE_MSGBOX, ""COLOR_WHITE_T"Sexo",""COLOR_WHITE_T"Ahora necesitamos que nos digas tu genero:", "Hombre", "Mujer");
+			}
+		}
+		case RegisterSex:
+		{
+			if(response == 1)
+			{
+				new INI:File = INI_Open(UserPath(playerid));
+				INI_WriteInt(File, "Sex", 1);
+				INI_Close(File);
+
+				SetSpawnInfo(playerid, 0, 60, -2016.4399, -79.7714, 35.3203, 0, 0, 0, 0, 0, 0, 0);
+				SetPlayerVirtualWorld(playerid, 0);
+				SetPlayerInterior(playerid, 0);
+				SetPlayerSkin(playerid, 60);
+				GivePlayerMoney(playerid, 15000);
+				SpawnPlayer(playerid);
+			}
+			else
+			{
+				new INI:File = INI_Open(UserPath(playerid));
+				INI_WriteInt(File, "Sex", 2);
+				INI_Close(File);
+
+				SetSpawnInfo(playerid, 0, 56, -2016.4399, -79.7714, 35.3203, 0, 0, 0, 0, 0, 0, 0);
+				SetPlayerVirtualWorld(playerid, 0);
+				SetPlayerInterior(playerid, 0);
+				SetPlayerSkin(playerid, 56);
+				GivePlayerMoney(playerid, 15000);
+				SpawnPlayer(playerid);
 			}
 		}
 	}
