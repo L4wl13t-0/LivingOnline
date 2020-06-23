@@ -231,9 +231,9 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					SetPlayerArmour(playerid, pInfo[playerid][Armour]);
 					SetPlayerVirtualWorld(playerid, pInfo[playerid][VirtualW]);
 					SetPlayerInterior(playerid, pInfo[playerid][Interior]);
-					SetPlayerSkin(playerid, pInfo[playerid][Skin]);
-					SetPlayerPos(playerid, pInfo[playerid][PosX], pInfo[playerid][PosY], pInfo[playerid][PosZ]);
 					ShowPlayerDialog(playerid, SuccessLogin, DIALOG_STYLE_MSGBOX, ""COLOR_WHITE_T"¡Listo!", ""COLOR_GREEN_T"Has iniciado sesion correctamente.", "Entendido", "");
+					SetSpawnInfo(playerid, 0, pInfo[playerid][Skin], pInfo[playerid][PosX], pInfo[playerid][PosY], pInfo[playerid][PosZ], 1.0, 0, 0, 0, 0, 0, 0);
+					SpawnPlayer(playerid);
 				}
 				else
 				{
@@ -257,9 +257,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 		{
 			if(response == 1)
 			{
-				new INI:File = INI_Open(UserPath(playerid));
-				INI_WriteInt(File, "Sex", 1);
-				INI_Close(File);
+				pInfo[playerid][Sex] = 1;
 
 				SetSpawnInfo(playerid, 0, 60, -2016.4399, -79.7714, 35.3203, 0, 0, 0, 0, 0, 0, 0);
 				SetPlayerVirtualWorld(playerid, 0);
@@ -270,9 +268,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			}
 			else
 			{
-				new INI:File = INI_Open(UserPath(playerid));
-				INI_WriteInt(File, "Sex", 2);
-				INI_Close(File);
+				pInfo[playerid][Sex] = 2;
 
 				SetSpawnInfo(playerid, 0, 56, -2016.4399, -79.7714, 35.3203, 0, 0, 0, 0, 0, 0, 0);
 				SetPlayerVirtualWorld(playerid, 0);

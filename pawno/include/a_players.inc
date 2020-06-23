@@ -1,6 +1,6 @@
 /*  SA-MP Player Functions
  *
- *  (c) Copyright 2005-2015, SA-MP Team
+ *  (c) Copyright 2005-2012, SA-MP Team
  *
  */
 
@@ -78,7 +78,6 @@ native SetPlayerAmmo(playerid, weaponslot, ammo);
 native GetPlayerAmmo(playerid);
 native GetPlayerWeaponState(playerid);
 native GetPlayerTargetPlayer(playerid);
-native GetPlayerTargetActor(playerid);
 native SetPlayerTeam(playerid, teamid);
 native GetPlayerTeam(playerid);
 native SetPlayerScore(playerid,score);
@@ -122,7 +121,6 @@ native SetPlayerSkillLevel(playerid, skill, level);
 native GetPlayerSurfingVehicleID(playerid);
 native GetPlayerSurfingObjectID(playerid);
 native RemoveBuildingForPlayer(playerid, modelid, Float:fX, Float:fY, Float:fZ, Float:fRadius);
-native GetPlayerLastShotVectors(playerid, &Float:fOriginX, &Float:fOriginY, &Float:fOriginZ, &Float:fHitPosX, &Float:fHitPosY, &Float:fHitPosZ);
 
 // Attached to bone objects
 
@@ -177,7 +175,7 @@ native GetPVarType(playerid, varname[]);
 #define MAX_CHATBUBBLE_LENGTH 144
 native SetPlayerChatBubble(playerid, text[], color, Float:drawdistance, expiretime);
 
-// Player control
+// Player controls
 native PutPlayerInVehicle(playerid, vehicleid, seatid);
 native GetPlayerVehicleID(playerid);
 native GetPlayerVehicleSeat(playerid);
@@ -190,7 +188,6 @@ native GetPlayerAnimationIndex(playerid); // return the index of any running app
 native GetAnimationName(index, animlib[], len1, animname[], len2); // get the animation lib/name for the index
 native GetPlayerSpecialAction(playerid);
 native SetPlayerSpecialAction(playerid,actionid);
-native DisableRemoteVehicleCollisions(playerid, disable);
 
 // Player world/map related
 native SetPlayerCheckpoint(playerid, Float:x, Float:y, Float:z, Float:size);
@@ -222,13 +219,6 @@ native SetCameraBehindPlayer(playerid);
 native GetPlayerCameraPos(playerid, &Float:x, &Float:y, &Float:z);
 native GetPlayerCameraFrontVector(playerid, &Float:x, &Float:y, &Float:z);
 native GetPlayerCameraMode(playerid);
-native EnablePlayerCameraTarget(playerid, enable);
-native GetPlayerCameraTargetObject(playerid);
-native GetPlayerCameraTargetVehicle(playerid);
-native GetPlayerCameraTargetPlayer(playerid);
-native GetPlayerCameraTargetActor(playerid);
-native Float:GetPlayerCameraAspectRatio(playerid);
-native Float:GetPlayerCameraZoom(playerid);
 native AttachCameraToObject(playerid, objectid);
 native AttachCameraToPlayerObject(playerid, playerobjectid);
 native InterpolateCameraPos(playerid, Float:FromX, Float:FromY, Float:FromZ, Float:ToX, Float:ToY, Float:ToZ, time, cut = CAMERA_CUT);
@@ -268,6 +258,3 @@ native StopRecordingPlayerData(playerid);
 
 native SelectTextDraw(playerid, hovercolor); // enables the mouse so the player can select a textdraw
 native CancelSelectTextDraw(playerid);	// cancel textdraw selection with the mouse
-
-// Explosion
-native CreateExplosionForPlayer(playerid, Float:X, Float:Y, Float:Z, type, Float:Radius);
