@@ -55,7 +55,15 @@ enum PlayerData
 	Float:PosZ,
 	Skin,
 	VirtualW,
-	Interior
+	Interior,
+	Gun1,
+	Gun1Ammo,
+	Gun2,
+	Gun2Ammo,
+	Gun3,
+	Gun3Ammo,
+	Gun4,
+	Gun4Ammo
 };
 new pInfo[MAX_PLAYERS][PlayerData];
 
@@ -77,6 +85,14 @@ public LoadUser_data(playerid, name[], value[])
 	INI_Int("Skin", pInfo[playerid][Skin]);
 	INI_Int("VirtualW", pInfo[playerid][VirtualW]);
 	INI_Int("Interior", pInfo[playerid][Interior]);
+	INI_Int("Gun1", pInfo[playerid][Gun1]);
+	INI_Int("Gun1Ammo", pInfo[playerid][Gun1Ammo]);
+	INI_Int("Gun2", pInfo[playerid][Gun2]);
+	INI_Int("Gun2Ammo", pInfo[playerid][Gun2Ammo]);
+	INI_Int("Gun3", pInfo[playerid][Gun3]);
+	INI_Int("Gun3Ammo", pInfo[playerid][Gun3Ammo]);
+	INI_Int("Gun4", pInfo[playerid][Gun4]);
+	INI_Int("Gun4Ammo", pInfo[playerid][Gun4Ammo]);
 
     return 1;
 }
@@ -134,6 +150,10 @@ public OnPlayerDisconnect(playerid, reason)
 	pInfo[playerid][VirtualW] = GetPlayerVirtualWorld(playerid);
 	pInfo[playerid][Interior] = GetPlayerInterior(playerid);
 	pInfo[playerid][Skin] = GetPlayerSkin(playerid);
+	GetPlayerWeaponData(playerid, 0, pInfo[playerid][Gun1], pInfo[playerid][Gun1Ammo]);
+	GetPlayerWeaponData(playerid, 1, pInfo[playerid][Gun2], pInfo[playerid][Gun2Ammo]);
+	GetPlayerWeaponData(playerid, 2, pInfo[playerid][Gun3], pInfo[playerid][Gun3Ammo]);
+	GetPlayerWeaponData(playerid, 3, pInfo[playerid][Gun4], pInfo[playerid][Gun4Ammo]);
 
 	new INI:File = INI_Open(UserPath(playerid));
 	INI_SetTag(File, "data");
@@ -150,6 +170,14 @@ public OnPlayerDisconnect(playerid, reason)
 	INI_WriteInt(File, "Skin", pInfo[playerid][Skin]);
 	INI_WriteInt(File, "VirtualW", pInfo[playerid][VirtualW]);
 	INI_WriteInt(File, "Interior", pInfo[playerid][Interior]);
+	INI_WriteInt(File, "Gun1", pInfo[playerid][Gun1]);
+	INI_WriteInt(File, "Gun1Ammo", pInfo[playerid][Gun1Ammo]);
+	INI_WriteInt(File, "Gun2", pInfo[playerid][Gun2]);
+	INI_WriteInt(File, "Gun2Ammo", pInfo[playerid][Gun2Ammo]);
+	INI_WriteInt(File, "Gun3", pInfo[playerid][Gun3]);
+	INI_WriteInt(File, "Gun3Ammo", pInfo[playerid][Gun3Ammo]);
+	INI_WriteInt(File, "Gun4", pInfo[playerid][Gun4]);
+	INI_WriteInt(File, "Gun4Ammo", pInfo[playerid][Gun4Ammo]);
 	INI_Close(File);
 
 	return 1;
@@ -232,7 +260,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					SetPlayerVirtualWorld(playerid, pInfo[playerid][VirtualW]);
 					SetPlayerInterior(playerid, pInfo[playerid][Interior]);
 					ShowPlayerDialog(playerid, SuccessLogin, DIALOG_STYLE_MSGBOX, ""COLOR_WHITE_T"¡Listo!", ""COLOR_GREEN_T"Has iniciado sesion correctamente.", "Entendido", "");
-					SetSpawnInfo(playerid, 0, pInfo[playerid][Skin], pInfo[playerid][PosX], pInfo[playerid][PosY], pInfo[playerid][PosZ], 1.0, 0, 0, 0, 0, 0, 0);
+					GivePlayerWeapon(playerid, pInfo[playerid][Gun4], pInfo[playerid][Gun4Ammo]);
+					SetSpawnInfo(playerid, 0, pInfo[playerid][Skin], pInfo[playerid][PosX], pInfo[playerid][PosY], pInfo[playerid][PosZ], 1.0, pInfo[playerid][Gun1], pInfo[playerid][Gun1Ammo], pInfo[playerid][Gun2], pInfo[playerid][Gun2Ammo], pInfo[playerid][Gun3], pInfo[playerid][Gun3Ammo]);
 					SpawnPlayer(playerid);
 				}
 				else
